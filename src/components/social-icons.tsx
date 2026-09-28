@@ -12,6 +12,33 @@ export function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
+export function GoogleIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={cn("size-4", className)}
+    >
+      <path
+        fill="#4285F4"
+        d="M21.6 12.23c0-.74-.07-1.45-.19-2.13H12v4.03h5.38a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.89-1.74 2.99-4.3 2.99-7.42Z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 22c2.7 0 4.96-.9 6.62-2.35l-3.23-2.5c-.9.6-2.04.96-3.39.96-2.6 0-4.81-1.76-5.6-4.12H3.07v2.58A10 10 0 0 0 12 22Z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M6.4 13.99A6 6 0 0 1 6.08 12c0-.69.12-1.36.32-1.99V7.43H3.07A10 10 0 0 0 2 12c0 1.61.39 3.14 1.07 4.57l3.33-2.58Z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 5.89c1.47 0 2.79.5 3.82 1.5l2.87-2.87C16.95 2.89 14.7 2 12 2A10 10 0 0 0 3.07 7.43l3.33 2.58C7.19 7.65 9.4 5.89 12 5.89Z"
+      />
+    </svg>
+  );
+}
+
 export function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg

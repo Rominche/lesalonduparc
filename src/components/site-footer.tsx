@@ -67,9 +67,17 @@ export function SiteFooter() {
       <div className="border-t border-background/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-background/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>© {new Date().getFullYear()} {site.name} · Atelier 228</p>
-          <Link href="/mentions-legales" className="hover:text-background">
-            Mentions légales
-          </Link>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link href="/mentions-legales" className="hover:text-background">
+              Mentions légales
+            </Link>
+            <Link href="/politique-cookies" className="hover:text-background">
+              Politique de cookies
+            </Link>
+            <Link href="#cookies" className="hover:text-background">
+              Gérer mes cookies
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Serif_Display, Work_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { TarteaucitronLoader } from "@/components/tarteaucitron-loader";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -40,6 +42,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${workSans.variable} ${dmSerif.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+        <Script id="tarteaucitron-lang" strategy="beforeInteractive">
+          {`window.tarteaucitronForceLanguage="fr";window.tarteaucitronCustomText={title:"Gestion des cookies"};`}
+        </Script>
+        <TarteaucitronLoader />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

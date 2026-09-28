@@ -134,3 +134,25 @@
     font-family: var(--font-heading), ui-serif, Georgia, serif;
   }
 }
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes services-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-services-progress {
+  animation: services-progress linear forwards;
+}

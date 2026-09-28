@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, MapPin, Star } from "lucide-react";
+import { Clock, MapPin } from "lucide-react";
+import { GoogleRating } from "@/components/google-rating";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
+import { BrandsCarousel } from "@/components/brands-carousel";
 import { PlanityButton } from "@/components/planity-button";
-import { ServiceCard } from "@/components/service-card";
+import { ServicesCarousel } from "@/components/services-carousel";
 import { featuredServices, homeServices } from "@/content/services";
 import { brands, loyalty, salons, site } from "@/content/site";
 
@@ -50,11 +52,7 @@ export default function HomePage() {
           <p className="mt-4 max-w-2xl text-muted-foreground">
             {site.description}
           </p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {grid.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
-            ))}
-          </div>
+          <ServicesCarousel services={grid} />
         </div>
       </section>
 
@@ -120,10 +118,12 @@ export default function HomePage() {
                         {salon.name} — {salon.city}
                       </h3>
                     </div>
-                    <p className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Star className="size-4 fill-accent text-accent" />
-                      {salon.rating} · {salon.reviews} avis
-                    </p>
+                    <GoogleRating
+                      name={salon.name}
+                      rating={salon.rating}
+                      reviews={salon.reviews}
+                      href={salon.maps}
+                    />
                   </div>
                   <p className="text-muted-foreground">{salon.description}</p>
                   <a
@@ -216,26 +216,7 @@ export default function HomePage() {
           <h2 className="font-heading text-4xl sm:text-5xl">
             Nos marques partenaires
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {brands.map((brand) => (
-              <article
-                key={brand.name}
-                className="flex flex-col rounded-2xl bg-card p-5 ring-1 ring-foreground/10"
-              >
-                <div className="relative mb-4 h-20">
-                  <Image
-                    src={brand.image}
-                    alt={brand.name}
-                    fill
-                    sizes="200px"
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="font-heading text-lg">{brand.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{brand.text}</p>
-              </article>
-            ))}
-          </div>
+          <BrandsCarousel brands={brands} />
         </div>
       </section>
 

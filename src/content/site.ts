@@ -36,12 +36,12 @@ export const salons = [
       { day: "Dimanche", hours: "Fermé" },
     ],
     planity: "https://www.planity.com/atelier-228-38410-saint-martin-duriage",
-    maps: "https://maps.google.com/?q=228+Avenue+des+Thermes+38410+Saint-Martin-d%27Uriage",
+    maps: "https://www.google.com/maps?cid=4765438589662577662",
     facebook: "https://www.facebook.com/atelier228coiffure",
     instagram: "https://www.instagram.com/atelier228/",
     image: "/images/salons/interieur.jpg",
-    rating: "4,8",
-    reviews: 206,
+    rating: "4,3",
+    reviews: 125,
   },
   {
     id: "grenoble" as const,
@@ -62,16 +62,22 @@ export const salons = [
       { day: "Dimanche", hours: "Fermé" },
     ],
     planity: "https://www.planity.com/le-salon-du-parc-38100-grenoble",
-    maps: "https://maps.google.com/?q=3+Rue+L%C3%A9on+Jouhaux+38100+Grenoble",
+    maps: "https://www.google.com/maps?cid=2286116851865828390",
     facebook: "https://www.facebook.com/lesalonduparc",
     instagram: "https://www.instagram.com/lesalonduparc/",
     image: "/images/hero.jpg",
-    rating: "4,9",
-    reviews: 118,
+    rating: "4,5",
+    reviews: 130,
   },
 ];
 
-export const brands = [
+export type Brand = {
+  name: string;
+  image: string;
+  text: string;
+};
+
+export const brands: Brand[] = [
   {
     name: "Petite cosméthic",
     image: "/images/brands/petite-cosmethic.jpg",

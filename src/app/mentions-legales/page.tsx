@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -30,6 +31,17 @@ export default function MentionsPage() {
           <p className="mt-2">
             Les rendez-vous sont gérés par Planity. Aucune donnée de réservation
             n’est collectée sur ce site.
+          </p>
+        </section>
+        <section>
+          <h2 className="font-heading text-2xl text-foreground">Cookies et statistiques</h2>
+          <p className="mt-2">
+            Ce site utilise Google Tag Manager pour la mesure d&apos;audience et le
+            suivi publicitaire, uniquement avec votre consentement. Consultez la{" "}
+            <Link href="/politique-cookies" className="text-foreground underline">
+              politique de cookies
+            </Link>{" "}
+            pour en savoir plus ou modifier vos préférences.
           </p>
         </section>
         <section>
