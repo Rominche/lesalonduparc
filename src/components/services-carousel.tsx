@@ -200,7 +200,7 @@ export function ServicesCarousel({ services }: { services: Service[] }) {
           scroller.scrollLeft +=
             targetRect.left +
             targetRect.width / 2 -
-            (scrollerRect.left + scrollerRect.clientWidth / 2);
+            (scrollerRect.left + scroller.clientWidth / 2);
           scroller.style.scrollSnapType = snap;
           thumbRawRef.current = middle;
           thumbJumpingRef.current = false;
