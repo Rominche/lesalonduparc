@@ -125,6 +125,8 @@ export const loyalty = [
     salon: "Uriage",
     title: "Carte commerçants d’Uriage",
     image: "/images/loyalty-uriage.png",
+    highlight: "3 %",
+    highlightLabel: "cagnotés à chaque achat",
     intro:
       "Grâce à la carte de fidélité de l’Union des Commerçants d’Uriage, 3 % du montant de chacun de vos achats est automatiquement cagnoté.",
     points: [
@@ -135,8 +137,11 @@ export const loyalty = [
   },
   {
     salon: "Grenoble",
-    title: "Abonnement Privilège — 200 € / an",
+    title: "Abonnement Privilège",
+    badge: "200 € / an",
     image: "/images/loyalty-grenoble.png",
+    highlight: "−25 %",
+    highlightLabel: "sur les prestations",
     intro:
       "Optez pour l’abonnement Privilège et bénéficiez pendant un an d’avantages pensés pour vous faire plaisir tout en maîtrisant votre budget.",
     points: [

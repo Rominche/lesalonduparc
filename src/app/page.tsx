@@ -1,17 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Clock, MapPin } from "lucide-react";
 import { GoogleRating } from "@/components/google-rating";
 import { FacebookIcon, InstagramIcon } from "@/components/social-icons";
 import { BrandsCarousel } from "@/components/brands-carousel";
 import { PlanityButton } from "@/components/planity-button";
 import { ServicesCarousel } from "@/components/services-carousel";
-import { featuredServices, homeServices } from "@/content/services";
+import { homeServices } from "@/content/services";
 import { brands, loyalty, salons, site } from "@/content/site";
 
 export default function HomePage() {
   const grid = homeServices();
-  const featured = featuredServices();
 
   return (
     <>
@@ -43,20 +41,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="prestations" className="scroll-mt-24 py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="text-xs tracking-[0.22em] text-primary uppercase">
-            Coiffure & esthétique
-          </p>
-          <h2 className="mt-2 font-heading text-4xl sm:text-5xl">Nos prestations</h2>
-          <p className="mt-4 max-w-2xl text-muted-foreground">
-            {site.description}
-          </p>
-          <ServicesCarousel services={grid} />
-        </div>
-      </section>
-
-      <section id="presentation" className="scroll-mt-24 bg-secondary/50 py-16 sm:py-24">
+      <section id="presentation" className="bg-secondary/50 py-16 sm:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-3">
             <Image
@@ -90,7 +75,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="nos-salons" className="scroll-mt-24 py-16 sm:py-24">
+      <section id="prestations" className="bg-foreground py-16 text-background sm:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 min-[1800px]:max-w-7xl">
+          <p className="text-xs tracking-[0.22em] text-primary uppercase">
+            Coiffure & esthétique
+          </p>
+          <h2 className="mt-2 font-heading text-4xl sm:text-5xl">Nos prestations</h2>
+          <p className="mt-4 max-w-2xl text-background/70">
+            {site.description}
+          </p>
+          <ServicesCarousel services={grid} />
+        </div>
+      </section>
+
+      <section id="nos-salons" className="bg-secondary/50 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-heading text-4xl sm:text-5xl">Nos salons</h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -174,44 +172,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="scroll-mt-24 bg-foreground py-16 text-background sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="font-heading text-4xl sm:text-5xl">Prestations en détail</h2>
-          <p className="mt-3 max-w-2xl text-background/70">
-            Couleur, soins, lissages, regard… retrouvez nos expertises et leurs
-            protocoles.
-          </p>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/prestations/${service.slug}`}
-                className="group overflow-hidden rounded-2xl bg-background/5 ring-1 ring-background/10"
-              >
-                <div className="relative h-44">
-                  <Image
-                    src={service.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-heading text-xl leading-snug">
-                    {service.cardTitle}
-                  </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-background/70">
-                    {service.excerpt}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="marques" className="scroll-mt-24 py-16 sm:py-24">
+      <section id="marques" className="py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-heading text-4xl sm:text-5xl">
             Nos marques partenaires
@@ -220,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="fidelite" className="scroll-mt-24 bg-secondary/50 py-16 sm:py-24">
+      <section id="fidelite" className="bg-secondary/50 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-heading text-4xl sm:text-5xl">
             Nos programmes fidélité
@@ -229,39 +190,52 @@ export default function HomePage() {
             {loyalty.map((program) => (
               <article
                 key={program.salon}
-                className="flex flex-col gap-5 rounded-2xl bg-card p-6 ring-1 ring-foreground/10 sm:flex-row sm:p-8"
+                className="flex flex-col rounded-2xl bg-card p-6 ring-1 ring-foreground/10 sm:p-8"
               >
-                <div className="relative mx-auto size-36 shrink-0 sm:mx-0">
-                  <Image
-                    src={program.image}
-                    alt=""
-                    fill
-                    sizes="144px"
-                    className="object-contain"
-                  />
+                <div className="flex items-center justify-between gap-6">
+                  <div>
+                    <p className="text-xs tracking-[0.18em] text-primary uppercase">
+                      {program.salon}
+                    </p>
+                    <p className="mt-3 font-heading text-5xl leading-none tracking-tight">
+                      {program.highlight}
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {program.highlightLabel}
+                    </p>
+                  </div>
+                  <div className="relative size-24 shrink-0 sm:size-28">
+                    <Image
+                      src={program.image}
+                      alt=""
+                      fill
+                      sizes="112px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs tracking-[0.18em] text-primary uppercase">
-                    {program.salon}
+                <h3 className="mt-6 font-heading text-2xl">{program.title}</h3>
+                {"badge" in program && program.badge ? (
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {program.badge}
                   </p>
-                  <h3 className="font-heading text-2xl">{program.title}</h3>
-                  <p className="mt-3 text-muted-foreground">{program.intro}</p>
-                  <ul className="mt-4 space-y-2 text-sm">
-                    {program.points.map((point) => (
-                      <li key={point} className="flex gap-2">
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                ) : null}
+                <p className="mt-3 text-muted-foreground">{program.intro}</p>
+                <ul className="mt-6 space-y-2 border-t border-foreground/10 pt-5 text-sm lg:mt-auto">
+                  {program.points.map((point) => (
+                    <li key={point} className="flex gap-2">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="reservation" className="scroll-mt-24 py-16 sm:py-24">
+      <section id="reservation" className="py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <h2 className="font-heading text-4xl sm:text-5xl">
             Envie de prendre soin de vous ?

@@ -15,7 +15,6 @@ export type Service = {
   image: string;
   locations: LocationId[];
   onHome: boolean;
-  featured?: boolean;
   intro: string[];
   highlights?: string[];
   sections?: ServiceSection[];
@@ -53,7 +52,6 @@ export const services: Service[] = [
     image: "/images/services/coloration.jpg",
     locations: ["grenoble", "uriage"],
     onHome: true,
-    featured: true,
     intro: [
       "La coloration d’oxydation est une technique professionnelle qui permet de colorer durablement les cheveux tout en offrant un résultat précis, lumineux et homogène. Elle agit en profondeur afin de couvrir les cheveux blancs, d’éclaircir, de foncer ou de modifier une couleur existante.",
       "Nous travaillons avec Végétalement Provence et Eugène Perma, reconnues pour leur expertise et leur engagement.",
@@ -98,7 +96,6 @@ export const services: Service[] = [
     image: "/images/services/extensions.jpg",
     locations: ["grenoble", "uriage"],
     onHome: true,
-    featured: true,
     intro: [
       "Les extensions de cheveux sont une solution idéale pour gagner en longueur, en volume ou transformer la chevelure. Grâce aux extensions Bellami Hair à la kératine, le résultat est naturel, durable et adapté à chaque chevelure.",
       "Bellami Hair est reconnue pour la qualité premium de ses cheveux 100 % naturels, soigneusement sélectionnés pour leur douceur, leur brillance et leur tenue.",
@@ -143,7 +140,6 @@ export const services: Service[] = [
     image: "/images/services/lissage.jpg",
     locations: ["grenoble", "uriage"],
     onHome: true,
-    featured: true,
     intro: [
       "Nous proposons des soins capillaires professionnels haut de gamme, adaptés à tous les types de cheveux. Le lissage brésilien Discovery Ybera et le soin botox capillaire disciplinent, réparent et subliment la chevelure, tout en respectant la fibre.",
     ],
@@ -209,7 +205,6 @@ export const services: Service[] = [
     image: "/images/services/balayages.jpg",
     locations: ["grenoble", "uriage"],
     onHome: true,
-    featured: true,
     intro: [
       "Le balayage illumine la chevelure tout en conservant un rendu naturel. Il apporte lumière, relief et profondeur, sans effet racine marqué. Chaque balayage est pensé selon la nature du cheveu, la coupe, la carnation et le résultat souhaité.",
       "Nous travaillons avec Eugène Perma, Végétalement Provence et Olaplex pour des balayages lumineux, durables et adaptés à toutes les envies.",
@@ -250,7 +245,6 @@ export const services: Service[] = [
     image: "/images/services/chignons.jpg",
     locations: ["grenoble", "uriage"],
     onHome: true,
-    featured: true,
     intro: [
       "Mariage, soirée, cérémonie, anniversaire ou événement professionnel : nous réalisons des chignons et coiffures événementielles sur-mesure, adaptés à votre style, votre tenue et l’occasion.",
       "Chignon flou, chic, bas, haut, coiffure wavy, attachée ou semi-attachée… chaque création met en valeur votre visage et tient tout au long de l’événement.",
@@ -271,7 +265,6 @@ export const services: Service[] = [
     image: "/images/services/head-spa.jpg",
     locations: ["grenoble"],
     onHome: true,
-    featured: true,
     intro: [
       "Petite Cosméthic allie efficacité, naturalité et sensorialité. Le Head Spa est une expérience immersive qui dépasse le simple soin capillaire pour devenir un moment de reconnexion à soi.",
       "Réalisé uniquement avec les produits Petite Cosméthic, il combine massages, techniques de relaxation et soins hautement concentrés.",
@@ -305,7 +298,6 @@ export const services: Service[] = [
     image: "/images/services/bronzage.png",
     locations: ["grenoble"],
     onHome: true,
-    featured: true,
     intro: [
       "Le bronzage par pulvérisation est une alternative sûre au bronzage traditionnel. Sans UV, il respecte la peau et préserve le capital solaire, avec un hâle naturel dès la première séance.",
       "Nous utilisons la lotion Riviera Tan, élaborée en France, composée à plus de 97 % d’ingrédients d’origine naturelle. L’actif, la DHA végétale issue de la canne à sucre, agit en surface pour un teint hâlé progressif, sans effet orangé.",
@@ -344,7 +336,6 @@ export const services: Service[] = [
     image: "/images/services/epilations.jpg",
     locations: ["grenoble"],
     onHome: true,
-    featured: true,
     intro: [
       "Nos prestations d’épilation offrent une peau nette, douce et durablement lisse. Réalisées avec des méthodes professionnelles et respectueuses de la peau, elles garantissent efficacité, précision et confort.",
     ],
@@ -372,7 +363,6 @@ export const services: Service[] = [
     image: "/images/services/regard.jpg",
     locations: ["grenoble"],
     onHome: true,
-    featured: true,
     intro: [
       "Les extensions de cils intensifient le regard tout en conservant un rendu élégant. Biolash offre légèreté, souplesse et tenue, sans effet lourd, adapté à toutes les morphologies d’yeux.",
       "Chaque prestation débute par un diagnostic : courbure, longueur et intensité sont choisies selon la forme des yeux et le résultat souhaité — naturel, intense ou sophistiqué.",
@@ -401,7 +391,6 @@ export const services: Service[] = [
     image: "/images/services/maquillage.jpg",
     locations: ["grenoble"],
     onHome: true,
-    featured: true,
     intro: [
       "Sublimez votre visage avec un maquillage professionnel adapté à votre style, votre carnation et l’occasion — événement, soirée, mariage ou simplement pour vous faire plaisir.",
     ],
@@ -435,8 +424,7 @@ export const services: Service[] = [
       "Une coloration naturelle et lumineuse, pour éclaircir la chevelure tout en préservant sa fibre.",
     image: "/images/services/balayage-argile.jpg",
     locations: ["grenoble", "uriage"],
-    onHome: false,
-    featured: true,
+    onHome: true,
     intro: [
       "Le balayage à l’argile utilise une base minérale, sans aluminium ni agents agressifs. Contrairement aux décolorations classiques, l’argile permet un éclaircissement progressif et maîtrisé.",
       "Le résultat est plus doux, plus naturel, avec des reflets lumineux et un effet soleil subtil. Blond beige, miel, caramel, reflets froids ou chauds : une lumière sur-mesure.",
@@ -467,8 +455,7 @@ export const services: Service[] = [
       "Réparation profonde et protection durable de la fibre capillaire, pour des cheveux plus forts, plus sains et visiblement transformés.",
     image: "/images/services/olaplex.jpg",
     locations: ["grenoble", "uriage"],
-    onHome: false,
-    featured: true,
+    onHome: true,
     intro: [
       "Le Soin Absolu Olaplex répare en profondeur les cheveux abîmés, fragilisés ou sensibilisés par les techniques chimiques, la chaleur ou les agressions extérieures.",
       "Grâce à sa technologie brevetée Bond Building, Olaplex reconstruit les liaisons internes du cheveu. Sans silicone ni huile, il restaure sans alourdir.",
@@ -498,8 +485,7 @@ export const services: Service[] = [
       "Une alternative naturelle pour sublimer vos cheveux : poudres de plantes, cheveux gainés, brillants et en meilleure santé.",
     image: "/images/services/coloration-vegetale.jpg",
     locations: ["grenoble", "uriage"],
-    onHome: false,
-    featured: true,
+    onHome: true,
     intro: [
       "La coloration végétale est composée exclusivement de poudres de plantes tinctoriales ayurvédiques. Contrairement aux colorations chimiques, elle n’ouvre pas la fibre : les pigments se déposent autour du cheveu, le gainent et le renforcent.",
       "Résultat : des cheveux plus brillants, plus épais et visiblement en meilleure santé.",
@@ -533,8 +519,7 @@ export const services: Service[] = [
       "Rituel naturel aux poudres de plantes : cuir chevelu purifié, fibre renforcée, cheveux brillants, forts et volumineux.",
     image: "/images/services/ayurvedique.png",
     locations: ["grenoble", "uriage"],
-    onHome: false,
-    featured: true,
+    onHome: true,
     intro: [
       "Un rituel personnalisé à partir de poudres de plantes ayurvédiques issues de l’agriculture biologique : Amla, Methi, Bhringraj, Neem et Cassia. Le soin transforme la fibre dès la première application, sans colorer le cheveu.",
     ],
@@ -590,8 +575,4 @@ export function getService(slug: string) {
 
 export function homeServices() {
   return services.filter((service) => service.onHome);
-}
-
-export function featuredServices() {
-  return services.filter((service) => service.featured);
 }

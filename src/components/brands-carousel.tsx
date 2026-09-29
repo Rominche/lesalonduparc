@@ -143,52 +143,14 @@ export function BrandsCarousel({ brands }: { brands: Brand[] }) {
   }, [active, count, goToRaw, paused, reduceMotion]);
 
   return (
-    <div className="mt-10">
-      <div className="mb-5 flex items-center justify-between gap-4">
-        <p className="font-sans text-sm text-muted-foreground" aria-live="polite">
-          <span className="font-medium text-foreground">
-            {String(active + 1).padStart(2, "0")}
-          </span>
-          <span className="mx-1.5 text-foreground/30">/</span>
-          <span>{String(count).padStart(2, "0")}</span>
-        </p>
-        <div className="flex shrink-0 gap-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="icon-lg"
-            className="rounded-full"
-            aria-label="Marque précédente"
-            onClick={() => {
-              pauseAfterArrows();
-              goToRaw(rawIndexRef.current - 1);
-            }}
-          >
-            <ChevronLeft />
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="icon-lg"
-            className="rounded-full"
-            aria-label="Marque suivante"
-            onClick={() => {
-              pauseAfterArrows();
-              goToRaw(rawIndexRef.current + 1);
-            }}
-          >
-            <ChevronRight />
-          </Button>
-        </div>
-      </div>
-
+    <div className="relative mt-10">
       <div
         ref={scrollerRef}
         id="marques-carousel"
         role="region"
         aria-roledescription="carrousel"
         aria-label="Marques partenaires"
-        className="relative flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mx-11 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-12 [&::-webkit-scrollbar]:hidden"
       >
         {slides.map(({ brand, copy }) => (
           <article
@@ -217,6 +179,34 @@ export function BrandsCarousel({ brands }: { brands: Brand[] }) {
           </article>
         ))}
       </div>
+      <Button
+        type="button"
+        variant="outline"
+        size="icon-lg"
+        className="absolute top-1/2 left-0 z-10 -translate-y-1/2 rounded-full bg-background shadow-sm"
+        aria-label="Marque précédente"
+        aria-controls="marques-carousel"
+        onClick={() => {
+          pauseAfterArrows();
+          goToRaw(rawIndexRef.current - 1);
+        }}
+      >
+        <ChevronLeft />
+      </Button>
+      <Button
+        type="button"
+        variant="outline"
+        size="icon-lg"
+        className="absolute top-1/2 right-0 z-10 -translate-y-1/2 rounded-full bg-background shadow-sm"
+        aria-label="Marque suivante"
+        aria-controls="marques-carousel"
+        onClick={() => {
+          pauseAfterArrows();
+          goToRaw(rawIndexRef.current + 1);
+        }}
+      >
+        <ChevronRight />
+      </Button>
     </div>
   );
 }

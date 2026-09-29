@@ -49,6 +49,7 @@
 }
 
 :root {
+  --header-height: 4rem;
   --background: #fff8f4;
   --foreground: #241712;
   --card: #fefefe;
@@ -81,6 +82,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --header-height: 4.5rem;
+  }
 }
 
 .dark {
@@ -125,7 +132,8 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans scroll-pt-24;
+    @apply font-sans;
+    scroll-padding-top: var(--header-height);
   }
   h1,
   h2,
@@ -155,4 +163,44 @@
 
 .animate-services-progress {
   animation: services-progress linear forwards;
+}
+
+/* La politique de cookies reste lisible avant acceptation ou refus. */
+html.cookie-policy-readable,
+html.cookie-policy-readable body {
+  overflow: auto !important;
+  height: auto !important;
+}
+
+html.cookie-policy-readable main {
+  padding-bottom: 10rem;
+}
+
+html.cookie-policy-readable #tarteaucitronRoot.tarteaucitronBeforeVisible {
+  pointer-events: none;
+}
+
+html.cookie-policy-readable #tarteaucitronRoot.tarteaucitronBeforeVisible #tarteaucitronAlertBig,
+html.cookie-policy-readable #tarteaucitronRoot.tarteaucitronBeforeVisible #tarteaucitron {
+  pointer-events: auto;
+}
+
+html.cookie-policy-readable body #tarteaucitronRoot.tarteaucitronSize-middle.tarteaucitronBeforeVisible::before {
+  content: none !important;
+  display: none !important;
+  backdrop-filter: none !important;
+}
+
+html.cookie-policy-readable body #tarteaucitronRoot.tarteaucitronSize-middle #tarteaucitronAlertBig {
+  top: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12) !important;
 }
